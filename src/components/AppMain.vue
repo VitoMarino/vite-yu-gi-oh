@@ -1,10 +1,10 @@
 <script>
-    import MainCharacterCard from './MainCharacterCard.vue';
+    import MainCaratteri from './MainCaratteri';
     import axios from 'axios';
 
     export default {
         components:{
-            MainCharacterCard
+            MainCaratteri
         },
         
         data() {
@@ -35,10 +35,10 @@ created(){
 
 <template>
     <main>
-        <MainCharacterCard :characters="characters"/>
+        <MainCaratteri :characters="characters"/>
     </main>
 </template>
 
-<style>
+<style lang="scss" scoped>
 
 </style>

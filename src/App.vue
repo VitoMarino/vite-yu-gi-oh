@@ -1,6 +1,6 @@
 <script>
-import AppHeader from './AppHeader.vue';
-import AppMain from './AppMain.vue';
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 
 export default {
   data() {
@@ -27,7 +27,4 @@ In questo caso è quello che voglio dato che questa (APP.Vue) è la madre di tut
 <!--QUESTO VALE PER IL GENERAL. Se voglio usare le PARTIALS, devo importarlo nel singolo file
 dove voglio venga applicata quella regola. Altrimenti non lo importa.-->
 <style lang="scss">
-  @use '../style/general.scss';
-  @use '../style/partials/mixins';
-  @use '../style/partials/variabili';
 </style>
