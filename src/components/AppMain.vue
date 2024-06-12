@@ -16,12 +16,13 @@ methods:{
     getCharacters(){
         axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
         .then((response.data) => {
-        console.log(response);
+        console.log(response.data);
+        this.characters = response.data;
         })
-        .catch(function (error) {
+        .catch( function (error) {
         console.log(error);
         })
-        .finally(function () {
+        .finally(function (){
         });
         }
 },
@@ -34,7 +35,7 @@ created(){
 
 <template>
     <main>
-        <MainCharacterCard/>
+        <MainCharacterCard :characters="characters"/>
     </main>
 </template>
 

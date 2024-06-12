@@ -1,5 +1,4 @@
 <script>
-import AppFooter from './AppFooter.vue';
 import AppHeader from './AppHeader.vue';
 import AppMain from './AppMain.vue';
 
@@ -11,8 +10,7 @@ export default {
   },
   components:{
     AppHeader,
-    AppMain,
-    AppFooter
+    AppMain
   }
 }
 </script>
@@ -21,8 +19,6 @@ export default {
   <AppHeader/>
 
   <AppMain/>
-
-  <AppFooter/>
 </template>
 
 <!--Se non inserisco lo scope TUTTE le regole saranno applicate a TUTTA la mia applicazione. 
