@@ -1,5 +1,5 @@
 <script>
-    import MainCaratteri from './MainCaratteri';
+    import MainCaratteri from './MainCaratteri.vue';
     import axios from 'axios';
 
     export default {
@@ -15,11 +15,11 @@
 methods:{
     getCharacters(){
         axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
-        .then((response.data) => {
+        .then((response) => {
         console.log(response.data);
-        this.characters = response.data;
+        this.characters = response.data
         })
-        .catch( function (error) {
+        .catch(function (error) {
         console.log(error);
         })
         .finally(function (){
