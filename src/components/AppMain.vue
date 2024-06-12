@@ -9,15 +9,15 @@
         
         data() {
     return {
-        characters: [],
+        caratteri: [],
     }
 },
 methods:{
     getCharacters(){
         axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
         .then((response) => {
-        console.log(response.data);
-        this.characters = response.data
+        console.log(response.data.data);
+        this.caratteri = response.data.data
         })
         .catch(function (error) {
         console.log(error);
@@ -35,10 +35,11 @@ created(){
 
 <template>
     <main>
-        <MainCaratteri :characters="characters"/>
+        <MainCaratteri :caratteri="caratteri"/>
     </main>
 </template>
 
 <style lang="scss" scoped>
-
+    @use './style/partials/mixins.scss' as*;
+    @use './style/partials/variabili.scss' as*;
 </style>
