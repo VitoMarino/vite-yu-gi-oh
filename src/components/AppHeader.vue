@@ -34,6 +34,7 @@ export default {
     }
 
     nav ul {
+        padding: 1rem;
         display: flex;
         align-items: center;
 

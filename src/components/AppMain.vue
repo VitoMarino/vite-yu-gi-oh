@@ -1,6 +1,7 @@
 <script>
     import MainCaratteri from './MainCaratteri.vue';
     import axios from 'axios';
+    import { store } from '../store.js'
 
     export default {
         components:{
@@ -9,7 +10,7 @@
         
         data() {
     return {
-        caratteri: [],
+        store
     }
 },
 methods:{
@@ -17,7 +18,7 @@ methods:{
         axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
         .then((response) => {
         console.log(response.data.data);
-        this.caratteri = response.data.data
+        this.store.caratteri = response.data.data
         })
         .catch(function (error) {
         console.log(error);
@@ -35,7 +36,7 @@ created(){
 
 <template>
     <main>
-        <MainCaratteri :caratteri="caratteri"/>
+        <MainCaratteri :caratteri="store.caratteri"/>
     </main>
 </template>
 
