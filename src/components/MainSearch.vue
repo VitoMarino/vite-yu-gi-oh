@@ -1,12 +1,19 @@
 <script>
+    export default {
+        data() {
 
+        },
+        props: {
+            archetypes: Array
+        }
+}
 </script>
 
 <template>
     <label for="carta"><strong>Scegli la carta:</strong></label>
     <select @click="$emit('cerca')">
         <option value="0" v-for="item in archetypes" :key="item.id">
-        {{ item.name }}
+        {{ item.archetype }}
         </option>
     </select>
 </template>
