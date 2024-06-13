@@ -4,11 +4,10 @@
 
 <template>
     <label for="carta"><strong>Scegli la carta:</strong></label>
-    <select @click="$emit('cerca')" name="select" id="select">
-        <option value="1">1</option>
-        <option value="2">1</option>
-        <option value="3">1</option>
-        <option value="4">1</option>
+    <select @click="$emit('cerca')">
+        <option v-for="(item, index) in archetypes" :key="item.index">
+            {{ item.archetype_name }}
+        </option>
     </select>
 </template>
 

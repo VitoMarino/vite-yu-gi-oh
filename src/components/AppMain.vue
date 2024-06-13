@@ -12,15 +12,32 @@
         
         data() {
     return {
-        store
+        store,
+        archetypes:{        
+
+        }
     }
 },
+
 methods:{
+    // API
     getCharacters(){
         axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
         .then((response) => {
         console.log(response.data.data);
         this.store.caratteri = response.data.data
+        })
+        .catch(function (error) {
+        console.log(error);
+        });
+        },
+    
+        //ARCHETIPO
+        getArchetypes(){
+        axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+        .then((response) => {
+        console.log(response.archetype_name);
+        this.archetypes = response.archetype_name
         })
         .catch(function (error) {
         console.log(error);
@@ -34,6 +51,7 @@ methods:{
 created(){
     this.getCharacters();
     this.funzioneDiProva();
+    this.getArchetypes();
 }
 
 }
@@ -41,7 +59,7 @@ created(){
 
 <template>
     <main>
-        <MainSearch @cerca="funzioneDiProva"/>
+        <MainSearch @cerca="funzioneDiProva" :archetypes="archetypes"/>
         <MainCaratteri :caratteri="store.caratteri"/>
     </main>
 </template>
