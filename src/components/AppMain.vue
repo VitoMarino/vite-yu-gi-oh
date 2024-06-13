@@ -1,11 +1,13 @@
 <script>
     import MainCaratteri from './MainCaratteri.vue';
+    import MainSearch from './MainSearch.vue';
     import axios from 'axios';
     import { store } from '../store.js'
 
     export default {
         components:{
-            MainCaratteri
+            MainCaratteri,
+            MainSearch
         },
         
         data() {
@@ -36,6 +38,7 @@ created(){
 
 <template>
     <main>
+        <MainSearch/>
         <MainCaratteri :caratteri="store.caratteri"/>
     </main>
 </template>

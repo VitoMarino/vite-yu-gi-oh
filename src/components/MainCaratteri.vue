@@ -1,21 +1,26 @@
 <script>
-import { store } from '../store.js'
+import { store } from '../store.js';
+
 export default {
         data() {
     return {
         store
     }
-},
-
+}
 }
 </script>
 
 <template>
-    <div v-for="item in store.caratteri" :key="item.id">
-        <img :src="item.card_images[0].image_url" alt="Card">
-        <h3>
-            {{ item.name }}
-        </h3>
+    <div class="div-general">
+        <div class="div-first" v-for="item in store.caratteri" :key="item.id">
+            <div class="div-second">
+                <img :src="item.card_images[0].image_url" alt="Card">
+            
+                <h3>
+                    {{ item.name }}
+                </h3>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -23,13 +28,22 @@ export default {
     @use './style/partials/mixins.scss' as*;
     @use './style/partials/variabili.scss' as*;
 
-    div{
-        margin: 2rem;
-        padding: .5rem;
-        width: (100% / 5);
+    div.div-general {
+        max-width: 1200px;
+        background-color: #d48f38;
     }
-    img{
-        width: 200px;
+
+    div.div-first{
+        display: inline-block;
+        max-width: 950px;
+        margin: 0 auto;
+        width: calc(100% / 6);
+        vertical-align: top;
+        margin: 1rem;
     }
+
+        img{
+            width: 100%;
+        }
 
 </style>
