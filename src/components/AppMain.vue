@@ -24,13 +24,16 @@ methods:{
         })
         .catch(function (error) {
         console.log(error);
-        })
-        .finally(function (){
         });
-        }
+        },
+    
+    funzioneDiProva() {
+        console.log('ciao vito')
+    }
 },
 created(){
     this.getCharacters();
+    this.funzioneDiProva();
 }
 
 }
@@ -38,7 +41,7 @@ created(){
 
 <template>
     <main>
-        <MainSearch/>
+        <MainSearch @cerca="funzioneDiProva"/>
         <MainCaratteri :caratteri="store.caratteri"/>
     </main>
 </template>

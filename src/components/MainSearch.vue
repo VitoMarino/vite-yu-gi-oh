@@ -4,7 +4,7 @@
 
 <template>
     <label for="carta"><strong>Scegli la carta:</strong></label>
-    <select @click="emit('cerca')" name="select" id="select">
+    <select @click="$emit('cerca')" name="select" id="select">
         <option value="1">1</option>
         <option value="2">1</option>
         <option value="3">1</option>
