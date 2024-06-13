@@ -13,9 +13,7 @@
         data() {
     return {
         store,
-        archetypes:{        
-
-        }
+        archetypes:[]
     }
 },
 
@@ -34,14 +32,14 @@ methods:{
     
         //ARCHETIPO
         getArchetypes(){
-        axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
-        .then((response) => {
-        console.log(response.archetype_name);
-        this.archetypes = response.archetype_name
-        })
-        .catch(function (error) {
-        console.log(error);
-        });
+            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+            .then((response) => {
+            console.log(response.data.data);
+            this.archetypes = response.data.data
+            })
+            .catch(function (error) {
+            console.log(error);
+            });
         },
     
     funzioneDiProva() {

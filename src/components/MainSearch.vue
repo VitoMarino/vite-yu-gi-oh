@@ -5,8 +5,8 @@
 <template>
     <label for="carta"><strong>Scegli la carta:</strong></label>
     <select @click="$emit('cerca')">
-        <option v-for="(item, index) in archetypes" :key="item.index">
-            {{ item.archetype_name }}
+        <option value="0" v-for="item in archetypes" :key="item.id">
+        {{ item.name }}
         </option>
     </select>
 </template>
